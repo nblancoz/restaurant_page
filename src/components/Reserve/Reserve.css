@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.form input,
+.form textarea {
+  margin-top: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form input {
+  padding: 5px;
+}
+
+button {
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}

@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Dishes from "./components/Dishes/Dishes";
 import Home from "./components/Home/Home";
+import Reserve from "./components/Reserve/Reserve";
 
 function App() {
   const dishes = [
@@ -36,6 +37,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/menu" element={<Dishes dishes={dishes} />} />
+                <Route path="/reserve" element={<Reserve />} />
               </Routes>
             </div>
           </div>
