@@ -1,5 +1,7 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
+import Dishes from "./components/Dishes/Dishes";
 import Home from "./components/Home/Home";
 
 function App() {
@@ -25,14 +27,21 @@ function App() {
   ];
 
   return (
-    <div className="container">
-      <Header />
-      <div className="home-img">
-        <div className="home">
-          <Home dishes={dishes} />
+    <>
+      <BrowserRouter>
+        <Header />
+        <div className="container">
+          <div className="dishes-img">
+            <div className="dishes">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Dishes dishes={dishes} />} />
+              </Routes>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </BrowserRouter>
+    </>
   );
 }
 

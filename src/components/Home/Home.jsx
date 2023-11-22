@@ -1,22 +1,12 @@
-import React from "react";
-import "./Home.css";
+import React from 'react'
 
-function Home(props) {
+const Home = () => {
   return (
-    <div className="title">
-      <h1>Dishes:</h1>
-      <div className="dishes">
-        <ul>
-          {props.dishes.map((dish) => (
-            <li key={dish.id}>
-              El {dish.name} cuesta: {dish.price}. Un poco sobre él:{" "}
-              {dish.description}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div>
+    <p>Hi, we are a restaurant, in this page you can look up for the menu and book a reserve. We're happy to serve you.</p>
+    <p>Click in each button to have different views.</p>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
