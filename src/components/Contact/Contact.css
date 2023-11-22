@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+img {
+  width: 50px;
+  border-radius: 50%;
+}

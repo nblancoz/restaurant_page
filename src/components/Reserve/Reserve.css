@@ -9,6 +9,12 @@
   margin-top: 5px;
   width: 100%;
   box-sizing: border-box;
+  background-color: gray;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: white;
 }
 
 .form input {
