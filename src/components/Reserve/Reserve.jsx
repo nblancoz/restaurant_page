@@ -8,6 +8,7 @@ const Reserve = () => {
     email: "",
     phone: "",
     date: null,
+    time: "",
     message: "",
   };
   const [data, setData] = useState(initialValue);
@@ -22,6 +23,14 @@ const Reserve = () => {
     return emailVerification.test(email);
   };
 
+  const isSameDay = (date1, date2) => {
+    return (
+      date1.getFullYear() === date2.getFullYear() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getDate() === date2.getDate()
+    );
+  };
+
   useEffect(() => {
     const validation = () => {
       if (data.name.length < 4) {
@@ -34,9 +43,19 @@ const Reserve = () => {
         setDateError("Please select a date");
         setBtnDisabled(true);
       } else {
-        setMessage(null);
-        setDateError("");
-        setBtnDisabled(false);
+        const selectedDate = new Date(data.date);
+        const currentDate = new Date();
+        if (
+          selectedDate < currentDate &&
+          !isSameDay(selectedDate, currentDate)
+        ) {
+          setDateError("Please select a valid date");
+          setBtnDisabled(true);
+        } else {
+          setMessage(null);
+          setDateError("");
+          setBtnDisabled(false);
+        }
       }
     };
     validation();
@@ -84,7 +103,18 @@ const Reserve = () => {
           onChange={inputChange}
           value={data.phone}
         />
-        <input type="date" name="date" onChange={inputChange} />
+        <input
+          type="date"
+          name="date"
+          onChange={inputChange}
+          value={data.date}
+        />
+        <input
+          type="time"
+          name="time"
+          onChange={inputChange}
+          value={data.time}
+        />
         <textarea
           name="message"
           id="message"
