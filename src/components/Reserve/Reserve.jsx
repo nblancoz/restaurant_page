@@ -90,7 +90,7 @@ const Reserve = () => {
           id="message"
           cols="30"
           rows="10"
-          placeholder="Anything else?"
+          placeholder="Something to add?"
           onChange={inputChange}
           value={data.message}
         ></textarea>
