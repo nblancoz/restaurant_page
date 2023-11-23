@@ -127,6 +127,7 @@ const Reserve = () => {
         <button id="button" type="submit" disabled={btnDisabled}>
           Send
         </button>
+        {message && <p>{message}</p>}
       </form>
     </div>
   );

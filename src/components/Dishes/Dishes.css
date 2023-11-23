@@ -1,7 +1,7 @@
 .dishes-img {
   background-image: url(https://sirviella.com/noticias/wp-content/uploads/2019/04/material-vajilla.jpg);
   border-radius: 10px;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
 }
